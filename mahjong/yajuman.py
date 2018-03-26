@@ -1,0 +1,2 @@
+class yakuman():
+    pass
