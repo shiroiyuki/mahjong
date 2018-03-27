@@ -17,6 +17,9 @@ class majan:
     def __str__(self):
         return self.name + "  " +str(self.index)
     
+    def __lt__(self, other):
+         return self.index < other.index
+    
     def resetDora(self):
         self.dora = 0
     
@@ -48,20 +51,43 @@ class player:
         self.id = player._counter
         self.name = name
         self.hand = []
+        self.manzu = []
+        self.pinzu = []
+        self.souzu = []
+        self.sangen = []
+        self.kazahai = []
     def sort(self):
-        pass
+        for i in self.hand:
+            if type(i) is manzu:
+                self.manzu.append(i)
+            elif type(i) is pinzu:
+                self.pinzu.append(i)
+            elif type(i) is souzu:
+                self.souzu.append(i)
+            elif type(i) is sangen:
+                self.sangen.append(i)
+            elif type(i) is kazahai:
+                self.kazahai.append(i)
+        self.manzu.sort()
+        self.pinzu.sort()
+        self.souzu.sort()
+        self.sangen.sort()
+        self.kazahai.sort()
+    def show(self):
+        return (self.manzu)
+        
 pai = []
 for i in range(9):
     for j in range(4):
         pai.append(manzu(suu[i]+'萬',i+1))
-        pai.append(manzu(suu[i]+'筒',i+1))
-        pai.append(manzu(suu[i]+'餅',i+1))
+        pai.append(pinzu(suu[i]+'筒',i+1))
+        pai.append(souzu(suu[i]+'餅',i+1))
 
 for i in range(4):
     for j in range(4):
-        pai.append(manzu(fon[i]+'風',i+1))
+        pai.append(kazahai(fon[i]+'風',i+1))
 
 for i in range(3):
     for j in range(4):
-        pai.append(manzu(gen[i],i+1))
+        pai.append(sangen(gen[i],i+1))
 #print(pai)

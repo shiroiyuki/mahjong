@@ -25,9 +25,22 @@ def app():
         j +=4
         D.hand += (define.pai[j:j+4])
         j +=4
+    A.sort()
+    '''
     for i in A.hand:
         print(i)
-        
-        
+    '''
+    for i in A.manzu:
+        print(i)
+    
+    for i in A.pinzu:
+        print(i)
+    for i in A.souzu:
+        print(i)
+    for i in A.kazahai:
+        print(i)
+    for i in A.sangen:
+        print(i)
+     
 if __name__=='__main__':
     app()
